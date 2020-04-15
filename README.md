@@ -1,4 +1,4 @@
-### S3 bucket monitoring 
+### S3 bucket monitoring / Auditing
 
 The attached code solution is based on a problem scenario which may helpful in some cases 
 
