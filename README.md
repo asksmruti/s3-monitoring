@@ -1,4 +1,4 @@
-### S3 bucket monitoring / Auditing
+### S3 bucket monitoring 
 
 The attached code solution is based on a problem scenario which may helpful in some cases 
 
@@ -25,5 +25,28 @@ To monitor whether there is a new file added to s3 bucket.
 
 Probably need to add one more caching layer in-case the number objects are huge 
 
+#### How to run exporter
+Please run the s3-exporter
 
+`python3 s3-exporter.py`
 
+Metrics endpoint: 
+
+http://localhost:8000/
+
+Sample prometheus config setup
+
+```
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'dl-monitoring'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+    - targets: ['127.0.0.1:8000']
+
+  - job_name: 'node-exporter'
+
+```
