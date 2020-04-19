@@ -20,7 +20,6 @@ if not path.exists(path.join(path.dirname(path.abspath(__file__)), '../logs')):
 log_conf_file_path = path.join(path.dirname(path.abspath(__file__)), '../conf/log.conf')
 logging.config.fileConfig(log_conf_file_path, disable_existing_loggers=False)
 
-
 # create logger
 logger = logging.getLogger('datalake')
 
@@ -122,7 +121,7 @@ def get_tab(sc, gc, dbl):
                     red_dict.setdefault("Database", []).append(db)
                     red_dict.setdefault("Table", []).append(tbl['Name'])
                     red_dict.setdefault("S3 Location", []).append(s3_location)
-                    red_dict.setdefault("Last updated", []).append(last_update_date)
+                    red_dict.setdefault("Last Updated", []).append(last_update_date)
                 else:
                     logger.info("%s is updated", s3_location)
             else:

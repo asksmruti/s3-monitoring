@@ -12,7 +12,7 @@ def json_response(dict_list_val):
         i_dict = {}
         i_dict['Database'] = dict_list_val['Database'][index]
         i_dict['S3 Location'] = dict_list_val['S3 Location'][index]
-        i_dict['Last updated'] = dict_list_val['Last updated'][index]
+        i_dict['Last Updated'] = dict_list_val['Last Updated'][index]
         o_dict.setdefault(object, []).append(i_dict)
     s_dict['Tables'] = o_dict
     return json.dumps(s_dict, indent=4)
